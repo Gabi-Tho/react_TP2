@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Entete.css';
 
+
 export default class Entete extends React.Component{
   constructor(props){
     super(props);
@@ -40,11 +41,11 @@ export default class Entete extends React.Component{
     let btnConnecter = (this.props.estConnecte ? "Se déconnecter": "Se connecter")
     return (
       <header className="App-header">
+
         <nav>
             <div className="top-nav ">
               <div className="barre">
                 <Link className="logo" to="/">
-
                   <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="100pt" height="100pt" viewBox="0 0 510.000000 510.000000"
  preserveAspectRatio="xMidYMid meet">
@@ -111,7 +112,7 @@ l-55 48 -31 252 c-18 139 -46 358 -63 487 -17 129 -38 285 -46 345 l-14 110
 
               <div className="barre">
                 
-                  <NavLink to="/produit">Les produits</NavLink>
+                  <NavLink to="/produit">Slurmo</NavLink>
               
               </div>
               <section class="search-bar">

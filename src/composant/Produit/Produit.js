@@ -17,8 +17,7 @@ export default class Produit extends React.Component{
         }
         return (
             <article className="produit">
-                <p>Nom : {this.props.nom}</p>
-                <p>Nom : {this.props.biere.nom}</p>
+                <p>{this.props.biere.nom}</p>
                 {prix}
                 
             </article>

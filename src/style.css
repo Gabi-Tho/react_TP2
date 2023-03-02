@@ -2,12 +2,12 @@
 :root {
   --font-stack:    'Roboto', sans-serif;
 
-  --couleur-primaire: #FFC107; /*Amber 500*/
+  --couleur-primaire: #07ff13; /*Amber 500*/
   --couleur-primaire-pale: #FFD54F; /*Amber 300*/
   --couleur-primaire-foncee: #FFA000; /*Amber 700*/
 
   --couleur-accent: #00E5FF; /*Cyan A400*/
-  --background: #fafafa;
+  --background: #000000;
   --unite: 68px;
 }
 

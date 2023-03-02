@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Produit from '../Produit/Produit';
 import './ListeProduit.css';
+import slurm from "./img/slurm.png"
 
 export default class ListeProduit extends React.Component{
   constructor(){
@@ -25,6 +26,7 @@ export default class ListeProduit extends React.Component{
     messageErreur : "Test"}
   }
 
+  //this is like use effect but for classes informs the app on the change of state
   componentDidMount(){
     fetch("http://127.0.0.1:8000/webservice/php/biere")
       .then(data=>data.json())
@@ -38,22 +40,19 @@ export default class ListeProduit extends React.Component{
 
   render(){
 
-    // creating a table that contains all the product information
-    // what does map do?
     let aProduits = this.state.produits.map((unProduit, index)=>{
-      //console.log(unProduit, index)
-      // Choisir sa façon, pas les deux...}
-        //<Produit nom={unProduit.nom} id={unProduit.id_biere} description={unProduit.description} />
+
       return ( 
         <Link key={unProduit.id_biere} to={"/produit/" + unProduit.id_biere}>
-            <Produit estConnecte={this.props.estConnecte}  biere={unProduit} {...unProduit} /> 
+            <Produit estConnecte={this.props.estConnecte}  biere={unProduit}  /> 
+          <div class="img-container">
+            <img  src={slurm}></img>
+          </div>
         </Link>
       );
     })
 
 
-
-    console.log(aProduits)
     
     if(aProduits.length <= 0){
       aProduits = <p>Aucun produit disponible</p>;
@@ -64,13 +63,9 @@ export default class ListeProduit extends React.Component{
       <>
       <h1 class="liste-title">Notre selection:</h1>
       <div className="liste">
-        {/* <p>Compteur : {this.props.compteur}</p> */}
-        {/*}<p>{this.state.messageErreur}</p>{*/}
         <section className='mesProduits'>
 
-          
           {aProduits}
-          {/*}{(aProduits.length ? aProduits : "Aucun produit disponible")}{*/}
           
         </section>
       </div>

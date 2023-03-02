@@ -22,10 +22,18 @@ export default class App extends React.Component{
   }
 
   connection(courriel) {
-    this.setState({
-      estConnecte : !this.state.estConnecte,
-      courriel: courriel
-    });
+
+    let regexCourriel = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(regexCourriel.test(courriel)==true){
+
+      this.setState({
+        estConnecte : !this.state.estConnecte,
+        courriel: courriel
+      });
+
+    }
+
+
   }
 
   augmenteCompte(){
